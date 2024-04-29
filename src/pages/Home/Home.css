@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+
+.main-image img{
+    z-index: -1;
+    top: 5%;
+    left: 26%;
+    width: 700px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .1;
+    position: absolute;
+    
+}
+.main-home{
+    transition: .0s ease;
+    pointer-events: auto;
+    font-family: "Reddit Mono";
+}
+.main-home.active{
+    filter:blur(15px);
+    pointer-events: none;
+}
+.section-home{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+.div-home{
+    max-width: 700px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.div-home h1{
+    font-size: 78px;
+    font-weight: 700;
+    text-shadow: 0 0 10px #6554cec5;
+}
+.div-home p{
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.div-home .start-btn{
+    width: 190px;
+    height: 55px;
+    background-color: #6554cec5;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #6554cec5;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .5s;
+}
+.div-home .start-btn:hover{
+    background-color: #9c77ed;
+    box-shadow: none;
+}
+

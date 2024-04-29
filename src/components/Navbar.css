@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+
+.StyledAppBar {
+    position: fixed;
+    font-family: "Reddit Mono";
+}
+
+.StyledToolbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #332593;
+    background-image: linear-gradient(#332593,#6655d6c5);
+}
+
+.Text-logo {
+    display: flex;
+    gap: 8px;
+    font-size: 25px;
+    align-items: center;
+    font-weight: 500;
+}
+
+.Links-navbar{
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+    font-weight: 300;
+}
+.Link:after{
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    bottom: 0px;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all 280ms ease-in-out;
+    width: 0;
+}
+  
+.Link:hover:after{
+    border-color: #fff;
+    transition: width 400ms ease-in-out;
+    width: 80%;
+}
+
+.Link {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 700;
+}

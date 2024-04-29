@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+
+.MuiButton-root.start-quiz-btn {
+    width: 150px;
+    height: 35px;
+    background-color: #6554cec5;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #6554cec5;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .5s;
+    justify-content: center;
+ 
+}
+
+.MuiButton-root.start-quiz-btn:hover {
+    background-color: #9c77ed;
+    box-shadow: none;
+}
+.popup-select{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    height: 520px;
+    background: #f3ecec;
+    border-radius: 6px;
+    padding: 10px 25px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+    font-family: "Reddit Mono";
+}
+.popup-select.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%);
+}
+.popup-select h2{
+    text-align: center ;
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: black;
+}
+.popup-select .info{
+    display: inline-block;
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+    margin: 4px 0;
+}
+.popup-select .btn-group{
+    display:  flex;
+    position: relative;
+    top: 70px;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #999;
+    margin-top: 10px;
+    padding: 15px 0 7px;
+}
+.popup-select .btn-group .info-btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 45px;
+    background-color: #9c77ed;
+    border: 2px solid #9c77ed;
+    outline: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 900;
+    box-shadow: 0 0 10px #6554cec5;
+    cursor: pointer;
+    transition: .5s;
+    font-family: "Reddit Mono";
+}
+.popup-select .btn-group .info-btn:nth-child(1){
+    background: transparent;
+    color: #6554cec5;
+}
+.popup-select .btn-group .info-btn:nth-child(1):hover{
+    background: #6554cec5;
+    color: #fff;
+}
+.popup-select .btn-group .info-btn:nth-child(2):hover{
+    background: #9a8eebc5;
+    border-color: #9a8eebc5;
+}
+.flex-cards{
+    display: flex;
+    gap: 100px;
+}
