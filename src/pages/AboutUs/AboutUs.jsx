@@ -2,6 +2,7 @@ import Icon from '@mui/material/Icon';
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import AboutContainer from '../../components/AboutContainer';
+import AboutTimeline from '../../components/AboutTimeline';
 import  "./AboutUs.css";
 
 function AboutUs() {
@@ -57,6 +58,7 @@ function AboutUs() {
             </div>
           </div>
           <AboutContainer/>
+          <AboutTimeline/>
         <Footer/>
       </>
     );
