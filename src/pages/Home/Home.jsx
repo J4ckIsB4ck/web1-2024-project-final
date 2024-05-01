@@ -24,7 +24,26 @@ function Home() {
       main.classList.remove('active');
     }
   }
+  const text = document.querySelector(".sec-text");
+
+const textLoad = () => {
+    setTimeout(() => {
+      text.textContent = "Improve";
+    }, 0);
+    setTimeout(() => {
+      text.textContent = "Learn";
+    }, 4000);
+    setTimeout(() => {
+      text.textContent = "Develop";
+    }, 8000);
+    setTimeout(() => {
+      text.textContent = "Progress";
+    }, 12000);
+}
+textLoad();
+setInterval(textLoad, 16000);
 }, []);
+
 
   return (
     <Fragment>  
@@ -36,10 +55,15 @@ function Home() {
                     <section className="section-home">
                       <div className="div-home">
                         <h1>QuickB Website</h1>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit</p>
                       <button className="start-btn">Start Quiz</button>
                     </div>
                 </section>
+                    <div className="container-main">
+                      <div className="container-text">
+                        <span className="text first-text">Let's</span>
+                        <span className="text sec-text"></span>
+                      </div>
+                    </div>
               <HomeContainer/>
             <Carousel/>
           <Footer/>

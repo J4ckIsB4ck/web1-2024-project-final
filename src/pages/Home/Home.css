@@ -17,6 +17,7 @@
     transition: .0s ease;
     pointer-events: auto;
     font-family: "Reddit Mono";
+    overflow: hidden;
 }
 .main-home.active{
     filter:blur(15px);
@@ -28,7 +29,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     position: relative;
 }
 .div-home{
@@ -66,4 +66,42 @@
     background-color: #9c77ed;
     box-shadow: none;
 }
-
+.container-main{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 30px;
+}
+.container-text{
+    display: flex;
+    gap: 30px;
+    width: 246px;
+}
+.container-text .text{
+    position: relative;
+    font-size: 30px;
+    font-weight: 600;
+    bottom: 100px;
+}
+.container-text .text.first-text{
+    color: black;
+}
+.text.sec-text:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(245, 226, 204);
+    border-left: 2px solid black;
+    animation: animate 4s steps(12) infinite;
+}
+@keyframes animate{
+    40%, 60%{
+        left: calc(100% + 4px);
+    }
+    100%{
+        left: 0%;
+    }
+}
