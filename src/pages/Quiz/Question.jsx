@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import './Quiz.css';
 
 export default function Question(props) {
     const [questiondata, setQuestionData] = useState([]);
@@ -20,13 +21,17 @@ export default function Question(props) {
     }, []);
 
     return (
-        <div>
-            <div>{`${props.data.attributes.text_question}`}</div>
-            <ul>
-                {questiondata.map(answer => (
-                    <li key={answer.id}>{answer.attributes.text_question}</li>
-                ))}
-            </ul>
-        </div>
+        <>
+            <div className="question-container">
+                <div className="question-card">
+                    <div className="question-name">{`${props.data.attributes.text_question}`}</div>
+                    <ul className="question-variants">
+                        {questiondata.map(answer => (
+                            <button className="question-variant-button" key={answer.id}>{answer.attributes.text_question}</button>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        </>
     );
 };

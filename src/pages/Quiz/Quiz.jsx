@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import Question from "./Question";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import './Quiz.css';
 
 export default function Quiz() {
     const { quiztype } = useParams();
     const [quizdata, setQuizData] = useState([]);
+    const [quizName, setQuizName] = useState("");
 
     useEffect(() => {
         async function getQuizData() {
@@ -15,6 +17,7 @@ export default function Quiz() {
             try {
                 const response = await axios.get(`http://localhost:1337/api/quizzes/${quiztype}?populate[0]=questions`, { headers });
                 setQuizData(response.data.data.attributes.questions.data);
+                setQuizName(response.data.data.attributes.name);
             } catch (error) {
                 console.error("Error fetching quiz data:", error);
             }
@@ -27,9 +30,9 @@ export default function Quiz() {
 
     return (
         <>
-            {/**/}
+            <h2>Welcome to {quizName} Quiz</h2> 
             {quizdata.map((question, index) => (
-                <Question data = {question}/>
+                <Question key={index} data={question}/>
             ))}
         </>
     );

@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home/Home";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Blog from "./pages/Blog/Blog";
-import Quiz from './components/Quiz';
+import Quiz from './pages/Quiz/Quiz';
 
 
 function App() {
