@@ -30,33 +30,33 @@ function PopupMenu({ onClose }) {
             </Typography>
           </CardContent>
           <CardActions sx={{ justifyContent: 'center' }}>
-            <Link to="/quiz/history">
-              <Button className="start-quiz-btn">Let's Go!</Button>
-            </Link>
+          <Link to="/quiz/history">
+            <Button className="start-quiz-btn">Let's Go!</Button>
+          </Link>
           </CardActions>
         </Card>
 
-        <Card sx={{ maxWidth: 345 }}>
-          <CardMedia
-            sx={{ height: 140 }}
-            image="Geography.jpg"
-            title="Geography"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Geography
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over 6,000
-              species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-          <CardActions sx={{ justifyContent: 'center' }}>
-            <Link to="/quiz/geography">
-              <Button className="start-quiz-btn">Let's Go!</Button>
-            </Link>
-          </CardActions>
-        </Card>
+      <Card sx={{ maxWidth: 345 }}>
+        <CardMedia
+          sx={{ height: 140 }}
+          image="Geography.jpg"
+          title="Geography"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Geography
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Lizards are a widespread group of squamate reptiles, with over 6,000
+            species, ranging across all continents except Antarctica
+          </Typography>
+        </CardContent>
+        <CardActions sx={{ justifyContent: 'center' }}>
+          <Link to="/quiz/geography">
+            <Button className="start-quiz-btn">Let's Go!</Button>
+          </Link>
+        </CardActions>
+      </Card>
 
         <Card sx={{ maxWidth: 345 }}>
           <CardMedia
