@@ -30,7 +30,7 @@ function PopupMenu({ onClose }) {
             </Typography>
           </CardContent>
           <CardActions sx={{ justifyContent: 'center' }}>
-          <Link to="/quiz/history">
+          <Link to="/quiz/1">
             <Button className="start-quiz-btn">Let's Go!</Button>
           </Link>
           </CardActions>
@@ -52,7 +52,7 @@ function PopupMenu({ onClose }) {
           </Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: 'center' }}>
-          <Link to="/quiz/geography">
+          <Link to="/quiz/3">
             <Button className="start-quiz-btn">Let's Go!</Button>
           </Link>
         </CardActions>
@@ -74,7 +74,7 @@ function PopupMenu({ onClose }) {
             </Typography>
           </CardContent>
           <CardActions sx={{ justifyContent: 'center' }}>
-            <Link to="/quiz/${quizType}">
+            <Link to="/quiz/2">
               <Button  className="start-quiz-btn">Let's Go!</Button>
             </Link>
           </CardActions>
