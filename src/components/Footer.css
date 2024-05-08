@@ -1,19 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
 
-.back-footer{
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
     background-color: #403391e2;
+}
+.footer .footer-social-links{
+    text-align: center;
+    padding-bottom: 25px;
+    color: #6554cec5;
+}
+.footer .footer-social-links a{
+    font-size: 25px;
+    color:#cfc8fbc5;
+    border: 2px solid #cfc8fbc5;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease-in-out;
+}
+.footer .footer-social-links a:hover{
+    transform: scale(1.2)translateY(-10px);
+    background-color: #cfc8fbc5;
+    color: black;
+    box-shadow: 0 0 25px #cfc8fbc5;
+}
+.footer a{
+   color: white;
+   border-bottom: 3px solid transparent;
+   transition: 0.3s ease-in-out; 
+}
+.footer a:hover{
+   border-bottom: 3px solid #cfc8fbc5;
+}
+.footer .copyright-footer{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 16px;
     color: white;
-    padding: 5rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    font-family: "Reddit Mono";
-}
-.back-footer h1{
-    font-weight: 500;
-}
-.back-footer-child{
-    display: flex;
-    gap: 10px;
 }

@@ -30,6 +30,7 @@ export default function Question(props) {
                             <button className="question-variant-button" key={answer.id}>{answer.attributes.text_question}</button>
                         ))}
                     </ul>
+
                 </div>
             </div>
         </>
