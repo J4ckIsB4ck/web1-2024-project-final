@@ -30,10 +30,16 @@ export default function Quiz() {
 
     return (
         <>
-            <h2>Welcome to {quizName} Quiz</h2> 
-            {quizdata.map((question, index) => (
-                <Question key={index} data={question}/>
-            ))}
+            <div className="question-header">
+                <h2>Welcome to {quizName} Quiz</h2> 
+                {quizdata.map((question, index) => (
+                    <Question key={index} data={question}/>
+                ))}
+            </div>
+            <div className="question-footer-buttons">
+                <button className="footer-buttons">Finish Test</button>
+                <button className="footer-buttons"><a href="/" >Return Home</a></button>
+            </div>
         </>
     );
 }
