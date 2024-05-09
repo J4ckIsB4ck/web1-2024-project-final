@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import './Quiz.css';
 
 export default function Question(props) {
@@ -14,7 +13,12 @@ export default function Question(props) {
 
     const answerClick = (answerText) => {
         setSelectedAnswer(answerText);
-    }
+        if (answerText === correctAnswer) {
+            props.onAnswer(true);
+        } else {
+            props.onAnswer(false);
+        }
+    };
 
     return (
         <>
@@ -23,9 +27,8 @@ export default function Question(props) {
                     <div className="question-name">{`${props.data.text_question}`}</div>
                     <ul className="question-variants">
                         {answersData.map((answer) => {
-                            const isCorrect = correctAnswer === answer.attributes.text_question;
                             const isSelected = selectedAnswer === answer.attributes.text_question;
-                            const buttonClassName = isSelected ? (isCorrect ? "correct-answer" : "wrong-answer") : "question-variant-button";
+                            const buttonClassName = isSelected ? (answer.attributes.text_question === correctAnswer ? "correct-answer" : "wrong-answer") : "question-variant-button";
 
                             return (
                                 <button

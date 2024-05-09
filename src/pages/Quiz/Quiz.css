@@ -93,6 +93,14 @@
 .footer-buttons:hover{
     background-color: #855bdaaf;
 }
+.footer-buttons:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
 .correct-answer{
     background-color: green;
+}
+.wrong-answer{
+    background-color: red;
 }
