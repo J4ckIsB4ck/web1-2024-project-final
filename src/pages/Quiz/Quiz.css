@@ -47,8 +47,9 @@
 .question-variants{
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 200px;
+    column-gap: 100px;
     row-gap: 10px;
+    padding: 40px 40px 40px 40px;
 }
 .question-variant-button{
     border: 1px solid black;
@@ -56,8 +57,8 @@
     font-family: "Reddit Mono";
     font-size: 14px;
     border-radius: 5px;
-    height: 40px;
-    width: 200px;
+    height: 50px;
+    width: 300px;
     color: #fff;
     cursor: pointer;
     transition: .5s;
@@ -73,6 +74,18 @@
     align-items: center;
     margin: 20px 0px 20px 0px;
     gap: 10px;
+}
+.question-footer-rezult{
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    width: 50%;
+    padding: 20px 0px 20px 0px;
+    background-color: rgba(246, 206, 160, 0.685);
+    font-family: "Reddit Mono";
+    font-size: 16px;
+    box-shadow: 0 0 5px #403391e2,
+                0 0 15px #403391e2;
 }
 .footer-buttons{
     border: 2px solid black;
@@ -99,8 +112,16 @@
     cursor: not-allowed;
 }
 .correct-answer{
+    border: 2px solid black;
+    border-radius: 5px;
+    font-family: "Reddit Mono";
+    color: #fff;
     background-color: green;
 }
 .wrong-answer{
+    border: 2px solid black;
+    border-radius: 5px;
+    font-family: "Reddit Mono";
+    color: #fff;
     background-color: red;
 }

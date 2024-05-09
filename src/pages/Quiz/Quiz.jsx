@@ -1,4 +1,3 @@
-// Quiz.js
 import React, { useEffect, useState } from "react";
 import Question from "./Question";
 import { useParams } from "react-router-dom";
@@ -14,6 +13,7 @@ export default function Quiz() {
     const [answeredQuestions, setAnsweredQuestions] = useState(0);
     const [score, setScore] = useState(null);
     const [isTestFinished, setIsTestFinished] = useState(false);
+    const [resultText, setResultText] = useState("");
 
     useEffect(() => {
         async function getdata() {
@@ -39,7 +39,15 @@ export default function Quiz() {
     };
 
     const handleFinishTest = () => {
-        setScore(`${correctAnswers}/${totalQuestions}`);
+        const currentScore = `${correctAnswers}/${totalQuestions}`;
+        setScore(currentScore);
+        if (currentScore === "5/5") {
+            setResultText("Молодец! Так держать");
+        } else if (currentScore >= "3/5") {
+            setResultText("Хорошо, но ты можешь лучше");
+        } else {
+            setResultText("Тебе нужно постараться");
+        }
     };
 
     return (
@@ -52,8 +60,8 @@ export default function Quiz() {
             </div>
             <div className="question-footer-buttons">
                 <button className="footer-buttons" onClick={handleFinishTest} disabled={!isTestFinished}>Finish Test</button>
+                {score !== null && <div className="question-footer-rezult">{`Score: ${score}`}{resultText && ` - ${resultText}`}</div>}
                 <button className="footer-buttons"><a href="/" >Return Home</a></button>
-                {score !== null && <div>{`Score: ${score}`}</div>}
             </div>
         </>
     );
