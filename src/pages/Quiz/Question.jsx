@@ -3,36 +3,44 @@ import axios from "axios";
 import './Quiz.css';
 
 export default function Question(props) {
-    const [questiondata, setQuestionData] = useState([]);
+    const [answersData, setAnswersData] = useState([]);
+    const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [correctAnswer, setCorrectAnswer] = useState("");
 
     useEffect(() => {
-        async function getQuestionData() {
-            const headers = {
-                "Authorization": "bearer c58abec0ba87154bc576d1ee62ddf794f7c344ed23c001a05cab2d044b3861792cd491a32902a67951004847cedbe2b75693c88e7b8e9a53c12192d9e1f3b5adde4b991112eb844bf0ae88e59f512e0af9de9be5bfcba516dda296c8c807a6a3faa866413f3fcbd7ec595c35476bdfc1e6fcefb7d322ca29e4ff19c046f47370"
-            };
-            try {
-                const response = await axios.get(`http://localhost:1337/api/questions/${props.data.id}?populate=*`, { headers });
-                setQuestionData(response.data.data.attributes.answers.data);
-            } catch (error) {
-                console.error("Error fetching question data:", error);
-            }
-        }
-        getQuestionData();
-    }, []);
+        setAnswersData(props.data.answers.data);
+        setCorrectAnswer(props.data.correct_answer.data.attributes.text_question);
+    }, [props.data.answers.data, props.data.correct_answer]);
+
+    const answerClick = (answerText) => {
+        setSelectedAnswer(answerText);
+    }
 
     return (
         <>
             <div className="question-container">
                 <div className="question-card">
-                    <div className="question-name">{`${props.data.attributes.text_question}`}</div>
+                    <div className="question-name">{`${props.data.text_question}`}</div>
                     <ul className="question-variants">
-                        {questiondata.map(answer => (
-                            <button className="question-variant-button" key={answer.id}>{answer.attributes.text_question}</button>
-                        ))}
-                    </ul>
+                        {answersData.map((answer) => {
+                            const isCorrect = correctAnswer === answer.attributes.text_question;
+                            const isSelected = selectedAnswer === answer.attributes.text_question;
+                            const buttonClassName = isSelected ? (isCorrect ? "correct-answer" : "wrong-answer") : "question-variant-button";
 
+                            return (
+                                <button
+                                    className={buttonClassName}
+                                    key={answer.id}
+                                    onClick={() => answerClick(answer.attributes.text_question)}
+                                    disabled={selectedAnswer !== null}
+                                >
+                                    {answer.attributes.text_question}
+                                </button>
+                            )
+                        })}
+                    </ul>
                 </div>
             </div>
         </>
     );
-};
+}

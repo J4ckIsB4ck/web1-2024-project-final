@@ -93,6 +93,6 @@
 .footer-buttons:hover{
     background-color: #855bdaaf;
 }
-.selected-answer {
+.correct-answer{
     background-color: green;
 }
